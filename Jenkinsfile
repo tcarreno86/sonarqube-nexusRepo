@@ -18,6 +18,8 @@ pipeline {
 
            steps {
                   withSonarQubeEnv('sonar_scanner') {
+             sh "mvn clean install sonar:sonar -Dsonar.host.url=http://ec2-3-80-103-206.compute-1.amazonaws.com/:9000 -Dsonar.login=f293a72b9f04733e76bd893ec2e210321a379d69 -DargLine="--add-opens java.base/java.lang=ALL-UNNAMED"
+
              sh "mvn -f SampleWebApp/pom.xml sonar:sonar"      
                }
             }
