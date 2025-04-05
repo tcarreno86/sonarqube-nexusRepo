@@ -40,7 +40,7 @@ pipeline {
         }    
         stage('deploy to tomcat') {
           steps {
-             deploy adapters: [tomcat9(credentialsId: 'password', path: '', url: 'http://100.26.147.33:8080/')], contextPath: 'monolithicApp', war: '**/*.war'
+             deploy adapters: [tomcat9(credentialsId: 'password', path: ", url: 'http://100.26.147.33:8080/')], contextPath: 'monolithicApp', war: '**/*.war'
                           
               
           }
